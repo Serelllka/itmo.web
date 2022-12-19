@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: inline-block;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+
+    cursor: url('./../../cur.png'), auto;
+
+    margin: 0;
+}
+
+html {  
+    scroll-behavior: smooth;
+}
+  
+
+h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    scroll-snap-align: end none;
+    scroll-margin-block: 0;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    background-color: rgba(51, 51, 51, 0.5);
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* video */
+
+.back__video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#canvas1 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+@media(min-aspect-ratio: 16/9) {
+    .back__video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(max-aspect-ratio: 16/9) {
+    .back__video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* navigation */
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fce38a;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
+
+.intro {
+    scroll-margin-block: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("../../res/images/background.jpg") center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.intro span {
+	display: inline;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: -10px 0 0 rgba(0, 0, 0, 0.5), 10px 0 0 rgba(0, 0, 0, 0.5);
+
+	padding: 0 10px 0 0;
+	color: #FFFFFF;
+	line-height: 5px;
+	font-size: 65px;
+}
+
+.intro__title {
+    margin-left: 50px;    
+
+    color: #fff;
+    font-size: 80px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+@media (max-width: 900px) {    
+    .intro__title {
+        line-height: 0.6;
+    }
+
+    .intro span {
+        font-size: 30px;
+    }
+}
+
+.container__title {
+    text-align: center;
+    background-color: #fff;
+
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+    font-size: calc(1.5rem + 6 * (100vw - 320px) / 880);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+
+    height: 100px;
+}
+
+@media (max-width: 320px) {
+    .container__title {
+        font-size: 15px;
+    }
+}
+
+.taste__title {
+    height: 40px;
+}
+
+.tastes__item {
+    width: 33%;
+
+    text-align: center;
+}
+
+.tastes__item.image {
+    display: inline-block;
+}
+
+.topic {
+    height: 100vh;
+}
+
+@media (max-width: 900px) {
+    .tastes__item {
+        width: 50%;
+    }
+
+    .tastes__item img {
+        width: 80%;
+    }
+
+    .topic {
+        height: auto;
+    }
+}   
+
+.tastes__container {
+    height: 100% - 140px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.jokes {
+    max-height: 400px;
+
+    overflow-y: scroll;
+}
+
+.jokes::-webkit-scrollbar {
+    display: none;
+}
+
+
+.jokes::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.jokes::-webkit-scrollbar-button {
+    display: none;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+body::-webkit-scrollbar-button {
+    display: none;
+}
+
+.container__tastes {
+    height: auto;
+
+    background: url("../../res/images/steam.png") right no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+} 
+
